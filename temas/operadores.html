@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Operadores - Enciclopedia de JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/style-operadores.css" />
+</head>
+<body>
+
+    <header class="bg-primary py-3">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary container">
+            <a class="navbar-brand fs-4 fw-bold" href="../index.html">Enciclopedia JS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="text-center mb-4 display-5 fw-bold">Operadores</h1>
+        
+        <p class="lead">Los operadores son símbolos que le indican a JavaScript qué tipo de acción debe realizar, ya sea matemática, lógica o de comparación, con uno o más valores.</p>
+
+        <section class="mt-5">
+            <h2 class="h3 fw-bold">1. Operadores Aritméticos 🔢</h2>
+            <p>Se usan para realizar cálculos matemáticos con números.</p>
+            <ul>
+                <li><code>+</code> (suma)</li>
+                <li><code>-</code> (resta)</li>
+                <li><code>*</code> (multiplicación)</li>
+                <li><code>/</code> (división)</li>
+                <li><code>%</code> (módulo o resto de la división)</li>
+                <li><code>**</code> (exponenciación)</li>
+            </ul>
+            <div class="example-box">
+                <pre><code>let a = 10;
+let b = 3;
+let suma = a + b;     // 13
+let modulo = a % b;   // 1
+let exponente = a ** b; // 1000</code></pre>
+            </div>
+        </section>
+
+        <section class="mt-5">
+            <h2 class="h3 fw-bold">2. Operadores de Comparación ⚖️</h2>
+            <p>Comparan dos valores y devuelven un valor booleano (<code>true</code> o <code>false</code>).</p>
+            <ul>
+                <li><code>==</code> (igualdad débil)</li>
+                <li><code>===</code> (igualdad estricta)</li>
+                <li><code>!=</code> (desigualdad débil)</li>
+                <li><code>!==</code> (desigualdad estricta)</li>
+                <li><code>&gt;</code> (mayor que)</li>
+                <li><code>&lt;</code> (menor que)</li>
+                <li><code>&gt;=</code> (mayor o igual que)</li>
+                <li><code>&lt;=</code> (menor o igual que)</li>
+            </ul>
+            <div class="example-box">
+                <pre><code>console.log(5 == '5');  // true (compara solo el valor)
+console.log(5 === '5'); // false (compara valor y tipo)
+console.log(10 > 5);    // true</code></pre>
+            </div>
+        </section>
+
+        <section class="mt-5">
+            <h2 class="h3 fw-bold">3. Operadores Lógicos 🧠</h2>
+            <p>Se utilizan para combinar valores booleanos y obtener un único resultado booleano.</p>
+            <ul>
+                <li><code>&&</code> (AND lógico): <code>true</code> si ambos operandos son <code>true</code>.</li>
+                <li><code>||</code> (OR lógico): <code>true</code> si al menos uno de los operandos es <code>true</code>.</li>
+                <li><code>!</code> (NOT lógico): Invierte el valor booleano.</li>
+            </ul>
+            <div class="example-box">
+                <pre><code>let esVerdadero = true;
+let esFalso = false;
+
+console.log(esVerdadero && esFalso); // false
+console.log(esVerdadero || esFalso); // true
+console.log(!esVerdadero);           // false</code></pre>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

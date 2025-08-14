@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arrays - Enciclopedia de JavaScript</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    crossorigin="anonymous"
+  />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+      color: #2c3e50;
+      margin: 0;
+      transition: background-color 0.4s ease;
+    }
+
+    .navbar {
+      background-color: #34495e !important;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: #ecf0f1 !important;
+      font-weight: 700;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #1abc9c !important;
+    }
+
+    footer {
+      background-color: #34495e;
+      color: #ecf0f1;
+      transition: background-color 0.3s ease;
+    }
+
+    main {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      max-width: 900px;
+      margin: 3rem auto;
+    }
+
+    h1, h2 {
+      color: #2c3e50;
+      font-weight: 700;
+    }
+
+    .lead {
+      font-size: 1.2rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      color: #34495e;
+    }
+
+    /* Estilos para ejemplos con scroll y efectos */
+    .example-box {
+      background-color: #e8f6f3;
+      border-left: 5px solid #1abc9c;
+      padding: 1rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(26, 188, 156, 0.15);
+      font-family: 'Source Code Pro', monospace;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      overflow-x: auto;
+      white-space: nowrap; /* scroll horizontal */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: text;
+      position: relative;
+    }
+
+    .example-box:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 24px rgba(26, 188, 156, 0.35);
+    }
+
+    .example-box::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .example-box::-webkit-scrollbar-track {
+      background: #d0e9e6;
+      border-radius: 10px;
+    }
+
+    .example-box::-webkit-scrollbar-thumb {
+      background-color: #1abc9c;
+      border-radius: 10px;
+    }
+
+    .example-box::before {
+      content: "💡 Ejemplo";
+      position: absolute;
+      top: -1.4rem;
+      left: 1rem;
+      background-color: #1abc9c;
+      color: white;
+      padding: 0.15rem 0.6rem;
+      font-weight: 700;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      box-shadow: 0 3px 8px rgba(26, 188, 156, 0.5);
+      user-select: none;
+      pointer-events: none;
+    }
+
+    pre code {
+      background: transparent;
+      padding: 0;
+      border-radius: 0;
+      display: inline-block;
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar navbar-expand-lg navbar-dark shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fs-4 fw-bold" href="../index.html">Enciclopedia JS</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Alternar navegación"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Inicio</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="display-5 text-center mb-4">Arrays (Arreglos)</h1>
+    <p class="lead">
+      Un array es una estructura que te permite guardar colecciones de elementos ordenados. Puedes almacenar cualquier tipo de dato y acceder a ellos usando índices, que comienzan en 0.
+    </p>
+
+    <section class="mt-5">
+      <h2 class="h3 fw-bold">1. Crear Arrays 📦</h2>
+      <p>Los arrays se crean usando corchetes <code>[]</code>, separando los elementos con comas.</p>
+
+      <div class="example-box">
+        <pre><code>// Array de cadenas de texto
+let frutas = ["Manzana", "Banana", "Cereza"];
+
+// Array con distintos tipos de datos
+let mezcla = [1, "Hola", true, { nombre: "Juan" }];</code></pre>
+      </div>
+    </section>
+
+    <section class="mt-5">
+      <h2 class="h3 fw-bold">2. Acceder y Modificar Elementos ✏️</h2>
+      <p>Para obtener un elemento, usa el nombre del array seguido del índice entre corchetes <code>[]</code>. El índice empieza en 0.</p>
+
+      <div class="example-box">
+        <pre><code>let colores = ["Rojo", "Verde", "Azul"];
+
+console.log(colores[0]); // "Rojo"
+
+// Cambiar un elemento
+colores[1] = "Amarillo";
+console.log(colores); // ["Rojo", "Amarillo", "Azul"];</code></pre>
+      </div>
+    </section>
+
+    <section class="mt-5">
+      <h2 class="h3 fw-bold">3. Métodos Comunes 🛠️</h2>
+      <p>JavaScript incluye métodos muy útiles para manipular arrays, como:</p>
+      <ul>
+        <li><code>push()</code>: agrega uno o más elementos al final.</li>
+        <li><code>pop()</code>: elimina el último elemento.</li>
+        <li><code>shift()</code>: elimina el primer elemento.</li>
+        <li><code>unshift()</code>: agrega elementos al inicio.</li>
+        <li><code>length</code>: propiedad para saber la cantidad de elementos.</li>
+      </ul>
+
+      <div class="example-box">
+        <pre><code>let numeros = [1, 2, 3];
+numeros.push(4); // [1, 2, 3, 4]
+
+let ultimo = numeros.pop(); // ultimo = 4, numeros = [1, 2, 3]
+
+console.log(numeros.length); // 3</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-dark text-white text-center py-4 mt-5">
+    <p class="mb-0">&copy; 2025 Enciclopedia de JavaScript. Proyecto PMA.</p>
+  </footer>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"
+  ></script>
+</body>
+</html>

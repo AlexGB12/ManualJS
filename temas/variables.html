@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Variables y Constantes - Enciclopedia de JavaScript</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../css/style-variables.css" />
+</head>
+<body>
+
+<header class="bg-primary py-3">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary container">
+    <a class="navbar-brand fs-4 fw-bold" href="../index.html">Enciclopedia JS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <h1 class="text-center mb-4 display-5 fw-bold">Variables y Constantes</h1>
+
+  <p class="lead text-center">En JavaScript, las variables y constantes son como contenedores que almacenan datos. Saber cuándo y cómo usarlas es fundamental.</p>
+
+  <section class="mt-5">
+    <h2 class="h3 fw-bold">1. Variables con <code>var</code></h2>
+    <p>La declaración con <code>var</code> es la forma original de crear variables en JavaScript. Sin embargo, tiene un ámbito de función, lo que puede causar problemas si no se usa con cuidado.</p>
+    <div class="example-box">
+      <pre><code>var nombre = "Juan";
+var edad = 30;
+
+if (edad > 18) {
+    var esMayorDeEdad = true; // esMayorDeEdad tiene un ámbito global en esta función
+}
+
+console.log(esMayorDeEdad); // Output: true</code></pre>
+    </div>
+  </section>
+
+  <section class="mt-5">
+    <h2 class="h3 fw-bold">2. Variables con <code>let</code></h2>
+    <p>Introducido en ES6, <code>let</code> se usa para declarar variables que pueden ser reasignadas. A diferencia de <code>var</code>, <code>let</code> tiene un ámbito de bloque, lo que significa que solo existe dentro de los <code>{}</code> donde fue declarado.</p>
+    <div class="example-box">
+      <pre><code>let contador = 0;
+contador = 1; // Correcto, la variable puede ser reasignada
+
+if (true) {
+    let mensaje = "Hola";
+}
+
+// console.log(mensaje); // Esto causaría un error, 'mensaje' no está definido</code></pre>
+    </div>
+  </section>
+
+  <section class="mt-5">
+    <h2 class="h3 fw-bold">3. Constantes con <code>const</code></h2>
+    <p>También introducido en ES6, <code>const</code> se usa para declarar variables que no pueden ser reasignadas después de su declaración inicial. Son ideales para valores que sabes que no cambiarán.</p>
+    <div class="example-box">
+      <pre><code>const PI = 3.14159;
+const nombre = "Ana";
+
+// PI = 3.14; // Esto causaría un error: TypeError, no se puede reasignar una constante
+
+const array = [1, 2, 3];
+array.push(4); // Correcto, se pueden modificar los elementos del array, pero no reasignar la variable</code></pre>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-dark text-white text-center py-4 mt-5">
+  <!-- Footer vacío -->
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+</body>
+</html>
